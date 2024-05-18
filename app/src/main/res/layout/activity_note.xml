@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NoteActivity">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="231dp"
+        android:layout_height="65dp"
+        android:elevation="10dp"
+        android:fontFamily="@font/yatra_one"
+        android:text="Root Farm"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/dark_green"
+        android:textSize="35dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/view3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.516" />
+
+    <View
+        android:id="@+id/headerCardView"
+        android:layout_width="306dp"
+        android:layout_height="193dp"
+        android:background="@drawable/design4"
+        android:elevation="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/capture"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.403">
+
+    </View>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="283dp"
+        android:layout_height="23dp"
+        android:elevation="10dp"
+        android:text="Disclaimer"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="17dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/headerCardView"
+        app:layout_constraintEnd_toEndOf="@+id/headerCardView"
+        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintStart_toStartOf="@+id/headerCardView"
+        app:layout_constraintTop_toTopOf="@+id/headerCardView"
+        app:layout_constraintVertical_bias="0.056" />
+
+    <TextView
+        android:layout_width="279dp"
+        android:layout_height="143dp"
+        android:elevation="10dp"
+        android:justificationMode="inter_word"
+        android:text="Please note that our mobile app is intended for educational purposes only and should not be relied upon as the sole basis for critical decisions, especially those concerning health and safety. Any actions taken based on the information provided by the app are at the user's own risk. We do not guarantee perfect or exact identification of crop cultures or their issues. Detection may have limitations and errors. Please consult a professional expert or agency before taking any actions based on the information provided by the app."
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/headerCardView"
+        app:layout_constraintEnd_toEndOf="@+id/headerCardView"
+        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintStart_toStartOf="@+id/headerCardView"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.178" />
+
+    <View
+        android:id="@+id/headerCardView2"
+        android:layout_width="306dp"
+        android:layout_height="193dp"
+        android:background="@drawable/design4"
+        android:elevation="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/capture"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.943">
+    </View>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="283dp"
+        android:layout_height="23dp"
+        android:elevation="10dp"
+        android:text="notes"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="17dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/headerCardView2"
+        app:layout_constraintEnd_toEndOf="@+id/headerCardView2"
+        app:layout_constraintHorizontal_bias="0.434"
+        app:layout_constraintStart_toStartOf="@+id/headerCardView2"
+        app:layout_constraintTop_toTopOf="@+id/headerCardView2"
+        app:layout_constraintVertical_bias="0.082" />
+
+    <TextView
+        android:layout_width="279dp"
+        android:layout_height="143dp"
+        android:elevation="10dp"
+
+        android:text="&#8226; This mobile app is designed for crop detection, specifically focusing on root identification.
+                  &#8226; It serves educational purposes and is not a substitute for professional advice.
+                                                                                       &#8226; Users are advised to use the information provided cautiously and consult experts before making any critical decisions.
+                                                                                &#8226; The accuracy of root detection may vary, and the app does not guarantee perfect identification.
+            &#8226; Any actions taken based on the app's information are at the user's own risk.
+"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/headerCardView2"
+        app:layout_constraintEnd_toEndOf="@+id/headerCardView2"
+        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintStart_toStartOf="@+id/headerCardView2"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.178"  />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/nav_btn" />
+
+    </androidx.cardview.widget.CardView>
+
+
+    <View
+        android:id="@+id/oval"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@drawable/nav_oval"
+        android:elevation="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.97" />
+
+    <ImageButton
+        android:id="@+id/capture"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/camera"
+        android:elevation="10dp"
+        android:backgroundTint="@color/light_green"
+        app:layout_constraintBottom_toBottomOf="@+id/oval"
+        app:layout_constraintEnd_toEndOf="@+id/oval"
+        app:layout_constraintStart_toStartOf="@+id/oval"
+        app:layout_constraintTop_toTopOf="@+id/oval" />
+
+    <ImageButton
+        android:id="@+id/btn1"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="70dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/home"
+        android:backgroundTint="@color/dark_green"
+        android:elevation="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/cardView"
+        app:layout_constraintEnd_toStartOf="@+id/oval"
+        app:layout_constraintStart_toStartOf="@+id/cardView"
+        app:layout_constraintTop_toTopOf="@+id/cardView" />
+
+    <ImageButton
+        android:id="@+id/btn2"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="19dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/folder"
+        android:backgroundTint="@color/light_green"
+        android:elevation="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/cardView"
+        app:layout_constraintEnd_toStartOf="@+id/oval"
+        app:layout_constraintStart_toEndOf="@+id/btn1"
+        app:layout_constraintTop_toTopOf="@+id/cardView" />
+
+    <ImageButton
+        android:id="@+id/btn3"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="19dp"
+        android:background="@drawable/data"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="@color/light_green"
+        android:elevation="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/cardView"
+        app:layout_constraintEnd_toStartOf="@+id/btn4"
+        app:layout_constraintStart_toEndOf="@+id/oval"
+        app:layout_constraintTop_toTopOf="@+id/cardView" />
+
+    <ImageButton
+        android:id="@+id/btn4"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/bar"
+        android:backgroundTint="@color/light_green"
+        android:elevation="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginStart="70dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/oval"
+        app:layout_constraintTop_toTopOf="@+id/cardView" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="39dp"
+        android:layout_height="17dp"
+        android:layout_marginTop="20dp"
+        android:elevation="10dp"
+        android:gravity="center"
+        android:text="Home"
+        android:textColor="@color/dark_green"
+        android:textSize="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btn1"
+        app:layout_constraintStart_toStartOf="@+id/btn1"
+        app:layout_constraintTop_toTopOf="@+id/btn1" />
+
+    <TextView
+        android:layout_width="39dp"
+        android:layout_height="17dp"
+        android:layout_marginTop="20dp"
+        android:elevation="10dp"
+        android:gravity="center"
+        android:text="Crops"
+        android:textColor="@color/light_green"
+        android:textSize="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btn2"
+        app:layout_constraintStart_toStartOf="@+id/btn2"
+        app:layout_constraintTop_toTopOf="@+id/btn2" />
+
+    <TextView
+        android:layout_width="69dp"
+        android:layout_height="17dp"
+        android:layout_marginTop="20dp"
+        android:elevation="10dp"
+        android:gravity="center"
+        android:text="Pie Data"
+        android:textColor="@color/light_green"
+        android:textSize="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btn3"
+        app:layout_constraintStart_toStartOf="@+id/btn3"
+        app:layout_constraintTop_toTopOf="@+id/btn3" />
+
+    <TextView
+        android:layout_width="69dp"
+        android:layout_height="17dp"
+        android:layout_marginTop="20dp"
+        android:elevation="10dp"
+        android:gravity="center"
+        android:text="Most data"
+        android:textColor="@color/light_green"
+        android:textSize="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btn4"
+        app:layout_constraintStart_toStartOf="@+id/btn4"
+        app:layout_constraintTop_toTopOf="@+id/btn4" />
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="match_parent"
+        android:layout_height="565dp"
+        android:background="@drawable/green_nav2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.578" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

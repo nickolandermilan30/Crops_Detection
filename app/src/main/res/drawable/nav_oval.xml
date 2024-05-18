@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Ang background color ng shape -->
+    <solid android:color="#FFFFFF" /> <!-- I-set ang kulay batay sa iyong nais -->
+
+    <!-- Ang radius ng rounded corner sa lahat ng gilid, kaya't ito ay magiging isang bilog -->
+    <corners
+        android:radius="50dp" /> <!-- Radius na kalahati ng sukat ng shape para maging bilog -->
+
+    <!-- Ang sukat ng shape (circle) -->
+    <size
+        android:width="100dp"
+        android:height="100dp" /> <!-- I-adjust ang sukat base sa iyong preference -->
+</shape>

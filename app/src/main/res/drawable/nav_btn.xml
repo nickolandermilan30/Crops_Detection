@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Ang background color ng shape -->
+    <solid android:color="#FFFFFF" /> <!-- I-set ang kulay batay sa iyong nais -->
+
+    <!-- Ang radius ng rounded corner sa kanan itaas -->
+    <corners
+        android:topRightRadius="0dp" /> <!-- I-adjust ang radius base sa iyong preference -->
+
+    <!-- Ang sukat ng shape (square) -->
+    <size
+        android:width="100dp"
+        android:height="100dp" /> <!-- I-adjust ang sukat base sa iyong preference -->
+
+</shape>

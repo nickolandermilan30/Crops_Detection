@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Crops">
+
+    <Button
+        android:id="@+id/c1"
+        android:layout_width="166dp"
+        android:layout_height="49dp"
+        android:backgroundTint="@color/dark_green"
+        android:text="Okra"
+        app:layout_constraintBottom_toTopOf="@+id/oval"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.485" />
+
+    <Button
+        android:id="@+id/c2"
+        android:layout_width="166dp"
+        android:layout_height="49dp"
+        android:backgroundTint="@color/dark_green"
+        android:text="Kangkong"
+        app:layout_constraintBottom_toTopOf="@+id/oval"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/c1"
+        app:layout_constraintVertical_bias="0.116" />
+
+
+    <Button
+        android:id="@+id/c3"
+        android:layout_width="166dp"
+        android:layout_height="49dp"
+        android:backgroundTint="@color/dark_green"
+        android:text="Talong"
+        app:layout_constraintBottom_toTopOf="@+id/oval"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/c2"
+        app:layout_constraintVertical_bias="0.168" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/nav_btn" />
+
+    </androidx.cardview.widget.CardView>
+
+
+    <View
+        android:id="@+id/oval"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@drawable/nav_oval"
+        android:elevation="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.97" />
+
+    <ImageButton
+        android:id="@+id/capture"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/camera"
+        android:elevation="10dp"
+        android:backgroundTint="@color/light_green"
+        app:layout_constraintBottom_toBottomOf="@+id/oval"
+        app:layout_constraintEnd_toEndOf="@+id/oval"
+        app:layout_constraintStart_toStartOf="@+id/oval"
+        app:layout_constraintTop_toTopOf="@+id/oval" />
+
+    <ImageButton
+        android:id="@+id/btn1"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="70dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/home"
+        android:backgroundTint="@color/light_green"
+        android:elevation="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/cardView"
+        app:layout_constraintEnd_toStartOf="@+id/oval"
+        app:layout_constraintStart_toStartOf="@+id/cardView"
+        app:layout_constraintTop_toTopOf="@+id/cardView" />
+
+    <ImageButton
+        android:id="@+id/btn2"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="19dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/folder"
+        android:backgroundTint="@color/dark_green"
+        android:elevation="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/cardView"
+        app:layout_constraintEnd_toStartOf="@+id/oval"
+        app:layout_constraintStart_toEndOf="@+id/btn1"
+        app:layout_constraintTop_toTopOf="@+id/cardView" />
+
+    <ImageButton
+        android:id="@+id/btn3"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="19dp"
+        android:background="@drawable/data"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="@color/light_green"
+        android:elevation="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/cardView"
+        app:layout_constraintEnd_toStartOf="@+id/btn4"
+        app:layout_constraintStart_toEndOf="@+id/oval"
+        app:layout_constraintTop_toTopOf="@+id/cardView" />
+
+    <ImageButton
+        android:id="@+id/btn4"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/bar"
+        android:backgroundTint="@color/light_green"
+        android:elevation="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginStart="70dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/oval"
+        app:layout_constraintTop_toTopOf="@+id/cardView" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="39dp"
+        android:layout_height="17dp"
+        android:layout_marginTop="20dp"
+        android:elevation="10dp"
+        android:gravity="center"
+        android:text="Home"
+        android:textColor="@color/light_green"
+        android:textSize="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btn1"
+        app:layout_constraintStart_toStartOf="@+id/btn1"
+        app:layout_constraintTop_toTopOf="@+id/btn1" />
+
+    <TextView
+        android:layout_width="39dp"
+        android:layout_height="17dp"
+        android:layout_marginTop="20dp"
+        android:elevation="10dp"
+        android:gravity="center"
+        android:text="Disease"
+        android:textColor="@color/dark_green"
+        android:textSize="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btn2"
+        app:layout_constraintStart_toStartOf="@+id/btn2"
+        app:layout_constraintTop_toTopOf="@+id/btn2" />
+
+    <TextView
+        android:layout_width="69dp"
+        android:layout_height="17dp"
+        android:layout_marginTop="20dp"
+        android:elevation="10dp"
+        android:gravity="center"
+        android:text="Pie Data"
+        android:textColor="@color/light_green"
+        android:textSize="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btn3"
+        app:layout_constraintStart_toStartOf="@+id/btn3"
+        app:layout_constraintTop_toTopOf="@+id/btn3" />
+
+    <TextView
+        android:layout_width="69dp"
+        android:layout_height="17dp"
+        android:layout_marginTop="20dp"
+        android:elevation="10dp"
+        android:gravity="center"
+        android:text="Most data"
+        android:textColor="@color/light_green"
+        android:textSize="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btn4"
+        app:layout_constraintStart_toStartOf="@+id/btn4"
+        app:layout_constraintTop_toTopOf="@+id/btn4" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="266dp"
+        android:layout_height="66dp"
+        android:fontFamily="@font/bebas_neue"
+        android:gravity="center"
+        android:text="Diseases"
+        android:textSize="55sp"
+        app:layout_constraintBottom_toBottomOf="@+id/cardView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.123" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
