@@ -81,5 +81,23 @@ public class ResultActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        findViewById(R.id.add).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Get the selected disease from resultTextView
+                String disease = resultTextView.getText().toString();
+
+                // Add the disease to DiseaseManager
+                DiseaseManager diseaseManager = new DiseaseManager(ResultActivity.this);
+                diseaseManager.addDisease(disease);
+
+                // Navigate to ListActivity
+                Intent listIntent = new Intent(ResultActivity.this, ListActivity.class);
+                startActivity(listIntent);
+            }
+        });
+
+
     }
 }

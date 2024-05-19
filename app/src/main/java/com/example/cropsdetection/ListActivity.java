@@ -4,38 +4,32 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.TextView;
+import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class NoteActivity extends AppCompatActivity {
+import java.util.List;
 
-    private TextView titleTextView;
-    private TextView textTextView;
+public class ListActivity extends AppCompatActivity {
+
+    private DiseaseManager diseaseManager;
     private ImageButton captureButton;
-    private ImageButton cropsbtn,piesbtn ;
+    private ImageButton cropsbtn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_note);
+        setContentView(R.layout.activity_list);
 
+        ListView listView = findViewById(R.id.listView);
         captureButton = findViewById(R.id.capture);
         cropsbtn = findViewById(R.id.btn2);
-        piesbtn = findViewById(R.id.btn3);
 
-        piesbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Define the activity to navigate to upon button click
-                Intent intent = new Intent(NoteActivity.this, ListActivity.class);
-                startActivity(intent); // Start the new activity
-            }
-        });
         captureButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Define the activity to navigate to upon button click
-                Intent intent = new Intent(NoteActivity.this, CaptureActivity.class);
+                Intent intent = new Intent(ListActivity.this, CaptureActivity.class);
                 startActivity(intent); // Start the new activity
             }
         });
@@ -43,11 +37,19 @@ public class NoteActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Define the activity to navigate to upon button click
-                Intent intent = new Intent(NoteActivity.this, Crops.class);
+                Intent intent = new Intent(ListActivity.this, Crops.class);
                 startActivity(intent); // Start the new activity
             }
         });
 
+        // Initialize DiseaseManager
+        diseaseManager = new DiseaseManager(this);
 
+        // Retrieve the list of diseases and display them in ListView
+        List<String> diseases = diseaseManager.getDiseaseList();
+
+        // Create and set custom adapter
+        CustomArrayAdapter adapter = new CustomArrayAdapter(this, diseases);
+        listView.setAdapter(adapter);
     }
 }

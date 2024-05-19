@@ -34,6 +34,8 @@ android {
 dependencies {
     implementation("androidx.appcompat:appcompat:1.4.1")
     implementation("androidx.core:core-ktx:1.7.0")
+    implementation("com.github.lecho:hellocharts-library:1.5.8@aar")
+
 
     implementation("org.tensorflow:tensorflow-lite:2.3.0")
     implementation("org.tensorflow:tensorflow-lite-support:0.1.0")

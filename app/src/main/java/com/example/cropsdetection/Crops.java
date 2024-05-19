@@ -6,15 +6,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class Crops extends AppCompatActivity {
     private ImageButton captureButton;
-    private ImageButton homebtn;
+    private ImageButton homebtn, piesbtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +23,16 @@ public class Crops extends AppCompatActivity {
         Button c2 = findViewById(R.id.c2);
         Button c3 = findViewById(R.id.c3);
 
+        piesbtn = findViewById(R.id.btn3);
+
+        piesbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Define the activity to navigate to upon button click
+                Intent intent = new Intent(Crops.this, ListActivity.class);
+                startActivity(intent); // Start the new activity
+            }
+        });
 
         captureButton.setOnClickListener(new View.OnClickListener() {
             @Override

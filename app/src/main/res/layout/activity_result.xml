@@ -115,17 +115,31 @@
 
     <Button
         android:id="@+id/doneButton"
-        android:layout_width="174dp"
-        android:layout_height="51dp"
-        android:backgroundTint="@color/light_green"
+        android:layout_width="151dp"
+        android:layout_height="53dp"
+        android:backgroundTint="#FF5722"
         android:onClick="onDoneButtonClick"
         android:text="Done"
         android:textSize="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.88"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/resultTextView"
-        app:layout_constraintVertical_bias="0.867" />
+        app:layout_constraintVertical_bias="0.888" />
+
+    <Button
+        android:id="@+id/add"
+        android:layout_width="151dp"
+        android:layout_height="53dp"
+        android:backgroundTint="@color/light_green2"
+        android:text="Add"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/doneButton"
+        app:layout_constraintEnd_toStartOf="@+id/doneButton"
+        app:layout_constraintHorizontal_bias="0.765"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/doneButton"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

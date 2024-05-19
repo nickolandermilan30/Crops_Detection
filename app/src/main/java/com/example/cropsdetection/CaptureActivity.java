@@ -1,5 +1,6 @@
 package com.example.cropsdetection;
 
+import android.Manifest;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
@@ -10,17 +11,12 @@ import android.os.BatteryManager;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.activity.EdgeToEdge;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.example.cropsdetection.ml.Dataset5;
 
@@ -31,7 +27,6 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
-import android.Manifest;
 
 public class CaptureActivity extends AppCompatActivity {
 
@@ -39,7 +34,7 @@ public class CaptureActivity extends AppCompatActivity {
     private static final float THRESHOLD_LOW = 10.0f;
 
     private ImageButton captureButton;
-    ImageButton camera, gallery, cropsbtn;
+    ImageButton camera, gallery, cropsbtn ,piesbtn;
     ImageView imageView, temperatureImageView;
     TextView result, temperatureTextView;
 
@@ -65,6 +60,16 @@ public class CaptureActivity extends AppCompatActivity {
         
         
         result.setVisibility(View.VISIBLE);
+        piesbtn = findViewById(R.id.btn3);
+
+        piesbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Define the activity to navigate to upon button click
+                Intent intent = new Intent(CaptureActivity.this, ListActivity.class);
+                startActivity(intent); // Start the new activity
+            }
+        });
 
         cropsbtn.setOnClickListener(new View.OnClickListener() {
             @Override
