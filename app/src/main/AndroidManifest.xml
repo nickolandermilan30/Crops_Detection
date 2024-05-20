@@ -27,13 +27,7 @@
         android:theme="@style/Theme.CropsDetection"
         tools:targetApi="31" >
         <activity
-            android:name=".Cameracv"
-            android:exported="false" />
-        <activity
             android:name=".ListActivity"
-            android:exported="false" />
-        <activity
-            android:name=".PieChartActivity"
             android:exported="false" />
         <activity
             android:name=".Disease3"
