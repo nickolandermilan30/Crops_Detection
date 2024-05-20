@@ -97,16 +97,14 @@ public class ListActivity extends AppCompatActivity {
     private void generatePieChart() {
         // Get data from the ListView
         Map<String, Integer> diseaseCounts = new HashMap<>();
+        int maxCount = 0;
         for (int i = 0; i < listView.getCount(); i++) {
             String disease = (String) listView.getItemAtPosition(i);
             // Remove numbers in parentheses
             disease = disease.replaceAll("\\s*\\(\\d+\\)\\s*", "");
-            if (diseaseCounts.containsKey(disease)) {
-                int count = diseaseCounts.get(disease);
-                diseaseCounts.put(disease, count + 1);
-            } else {
-                diseaseCounts.put(disease, 1);
-            }
+            int count = diseaseCounts.getOrDefault(disease, 0) + 1;
+            diseaseCounts.put(disease, count);
+            maxCount = Math.max(maxCount, count); // Get the maximum count
         }
 
         // Define colors for each disease
@@ -114,23 +112,31 @@ public class ListActivity extends AppCompatActivity {
         colors.add(Color.BLUE);  // Anthracnose
         colors.add(Color.RED);   // Bacterial Wilt
         colors.add(Color.GREEN); // White Rust
-        colors.add(Color.MAGENTA);// Downy Mildew
+        colors.add(Color.MAGENTA); // Downy Mildew
         colors.add(Color.CYAN);  // Leaf spot
         colors.add(Color.YELLOW); // Yellow Vein Mosaic Virus
 
         // Prepare data for pie chart
         List<PieEntry> entries = new ArrayList<>();
-        int colorIndex = 0;
         for (Map.Entry<String, Integer> entry : diseaseCounts.entrySet()) {
-            entries.add(new PieEntry(entry.getValue(), entry.getKey()));
-            colorIndex++;
+            float value = entry.getValue(); // Get the count
+            if (value == maxCount) {
+                // Adjust the value for the disease with the maximum count
+                value *= 1.2f; // Increase the value by 20% for emphasis
+            }
+            entries.add(new PieEntry(value, entry.getKey()));
         }
 
         // Create dataset and set it to the pie chart
-        PieDataSet dataSet = new PieDataSet(entries, "Disease Counts");
+        PieDataSet dataSet = new PieDataSet(entries, "");
         dataSet.setColors(colors);
+        dataSet.setDrawValues(false); // Disable values on the chart
         PieData data = new PieData(dataSet);
         pieChart.setData(data);
         pieChart.invalidate(); // refresh
+
+        // Disable legends and labels
+        pieChart.getLegend().setEnabled(false);
+        pieChart.getDescription().setEnabled(false);
     }
 }
