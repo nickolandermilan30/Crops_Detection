@@ -7,16 +7,51 @@
     android:layout_height="match_parent"
     tools:context=".ListActivity">
 
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/pieChart"
+        android:layout_width="353dp"
+        android:layout_height="300dp"
+        app:layout_constraintBottom_toTopOf="@+id/listView"
+        app:layout_constraintEnd_toEndOf="@+id/listView"
+        app:layout_constraintStart_toStartOf="@+id/listView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <Button
+        android:id="@+id/delete"
+        android:layout_width="143dp"
+        android:layout_height="49dp"
+        android:backgroundTint="#FF5722"
+        android:text="Delete"
+        app:layout_constraintBottom_toTopOf="@+id/oval"
+        app:layout_constraintEnd_toEndOf="@+id/listView"
+        app:layout_constraintHorizontal_bias="0.927"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/listView"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/gene"
+        android:layout_width="143dp"
+        android:layout_height="49dp"
+        android:backgroundTint="@color/light_green2"
+        android:text="Generate"
+        app:layout_constraintBottom_toTopOf="@+id/oval"
+        app:layout_constraintEnd_toStartOf="@+id/delete"
+        app:layout_constraintStart_toStartOf="@+id/listView"
+        app:layout_constraintTop_toBottomOf="@+id/listView"
+        app:layout_constraintVertical_bias="1.0" />
+
     <ListView
         android:id="@+id/listView"
         android:layout_width="348dp"
-        android:layout_height="300dp"
+        android:layout_height="200dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.478"
+        app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.754" />
+        app:layout_constraintVertical_bias="0.709" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"

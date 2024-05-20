@@ -24,11 +24,11 @@ public class CustomArrayAdapter extends ArrayAdapter<String> {
         View view = convertView;
         if (view == null) {
             LayoutInflater inflater = LayoutInflater.from(context);
-            view = inflater.inflate(R.layout.list_item_with_number, parent, false);
+            view = inflater.inflate(android.R.layout.simple_list_item_1, parent, false);
         }
 
         TextView textView = view.findViewById(android.R.id.text1);
-        textView.setText((position + 1) + ". " + items.get(position));
+        textView.setText(items.get(position));
 
         return view;
     }
