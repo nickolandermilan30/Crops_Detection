@@ -24,7 +24,7 @@ import java.util.Map;
 public class ListActivity extends AppCompatActivity {
 
     private DiseaseManager diseaseManager;
-    private ImageButton captureButton;
+    private ImageButton captureButton, homeButton;
     private ImageButton cropsbtn;
     private Button deleteButton;
     private Button generateButton;
@@ -43,6 +43,7 @@ public class ListActivity extends AppCompatActivity {
         deleteButton = findViewById(R.id.delete);
         generateButton = findViewById(R.id.gene);
         pieChart = findViewById(R.id.pieChart);
+        homeButton = findViewById(R.id.btn1);
 
         // Initialize DiseaseManager
         diseaseManager = new DiseaseManager(this);
@@ -53,6 +54,15 @@ public class ListActivity extends AppCompatActivity {
         // Create and set custom adapter
         adapter = new CustomArrayAdapter(this, diseases);
         listView.setAdapter(adapter);
+
+        homeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Define the activity to navigate to upon button click
+                Intent intent = new Intent(ListActivity.this, NoteActivity.class);
+                startActivity(intent); // Start the new activity
+            }
+        });
 
         captureButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -99,25 +109,32 @@ public class ListActivity extends AppCompatActivity {
         Map<String, Integer> diseaseCounts = new HashMap<>();
         int maxCount = 0;
         for (int i = 0; i < listView.getCount(); i++) {
-            String disease = (String) listView.getItemAtPosition(i);
-            // Remove numbers in parentheses
-            disease = disease.replaceAll("\\s*\\(\\d+\\)\\s*", "");
-            int count = diseaseCounts.getOrDefault(disease, 0) + 1;
-            diseaseCounts.put(disease, count);
-            maxCount = Math.max(maxCount, count); // Get the maximum count
+            String diseaseItem = (String) listView.getItemAtPosition(i);
+            String diseaseName = diseaseItem.replaceAll("\\s*\\(\\d+\\)\\s*", "");
+            int count = 1;
+
+            // Extract the number from parentheses if present
+            if (diseaseItem.matches(".*\\(\\d+\\).*")) {
+                count = Integer.parseInt(diseaseItem.replaceAll(".*\\((\\d+)\\).*", "$1"));
+            }
+
+            int existingCount = diseaseCounts.getOrDefault(diseaseName, 0);
+            diseaseCounts.put(diseaseName, existingCount + count);
+            maxCount = Math.max(maxCount, diseaseCounts.get(diseaseName)); // Get the maximum count
         }
 
         // Define colors for each disease
-        List<Integer> colors = new ArrayList<>();
-        colors.add(Color.BLUE);  // Anthracnose
-        colors.add(Color.RED);   // Bacterial Wilt
-        colors.add(Color.GREEN); // White Rust
-        colors.add(Color.MAGENTA); // Downy Mildew
-        colors.add(Color.CYAN);  // Leaf spot
-        colors.add(Color.YELLOW); // Yellow Vein Mosaic Virus
+        Map<String, Integer> diseaseColors = new HashMap<>();
+        diseaseColors.put("Anthracnose", Color.parseColor("#800080")); // purple
+        diseaseColors.put("Bacterial Wilt", Color.parseColor("#008000")); // green
+        diseaseColors.put("White Rust", Color.parseColor("#808080")); // grey
+        diseaseColors.put("Downy Mildew", Color.parseColor("#FF00FF")); // magenta
+        diseaseColors.put("Leaf spot", Color.parseColor("#A52A2A")); // brown
+        diseaseColors.put("Yellow Vein Mosaic Virus", Color.parseColor("#FFFF00")); // yellow
 
         // Prepare data for pie chart
         List<PieEntry> entries = new ArrayList<>();
+        List<Integer> colors = new ArrayList<>();
         for (Map.Entry<String, Integer> entry : diseaseCounts.entrySet()) {
             float value = entry.getValue(); // Get the count
             if (value == maxCount) {
@@ -125,12 +142,13 @@ public class ListActivity extends AppCompatActivity {
                 value *= 1.2f; // Increase the value by 20% for emphasis
             }
             entries.add(new PieEntry(value, entry.getKey()));
+            colors.add(diseaseColors.get(entry.getKey())); // Assign specific color to each disease
         }
 
         // Create dataset and set it to the pie chart
         PieDataSet dataSet = new PieDataSet(entries, "");
         dataSet.setColors(colors);
-        dataSet.setDrawValues(false); // Disable values on the chart
+        dataSet.setDrawValues(true); // Enable values on the chart
         PieData data = new PieData(dataSet);
         pieChart.setData(data);
         pieChart.invalidate(); // refresh
