@@ -1,16 +1,18 @@
 package com.example.cropsdetection;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Crops extends AppCompatActivity {
     private ImageButton captureButton;
-    private ImageButton homebtn, piesbtn;
+    private ImageButton homebtn, piesbtn,mostdata;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +26,29 @@ public class Crops extends AppCompatActivity {
         Button c3 = findViewById(R.id.c3);
 
         piesbtn = findViewById(R.id.btn3);
+        mostdata = findViewById(R.id.btn4);
+
+        mostdata.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Build AlertDialog
+                AlertDialog.Builder builder = new AlertDialog.Builder(Crops.this);
+                builder.setTitle("Alert");
+                builder.setMessage("You need To Generate Piechart to see most data");
+                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Proceed to CaptureActivity
+                        Intent intent = new Intent(Crops.this, CaptureActivity.class);
+                        startActivity(intent);
+                    }
+                });
+
+                // Show AlertDialog
+                AlertDialog alertDialog = builder.create();
+                alertDialog.show();
+            }
+        });
 
         piesbtn.setOnClickListener(new View.OnClickListener() {
             @Override

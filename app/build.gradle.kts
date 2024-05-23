@@ -72,6 +72,7 @@ dependencies {
     implementation("com.google.android.gms:play-services-fitness:21.1.0")
     implementation("androidx.test:monitor:1.6.1")
     implementation("androidx.test.ext:junit:1.1.5")
+    implementation(libs.activity)
     androidTestImplementation("junit:junit:4.12")
     annotationProcessor ("com.github.bumptech.glide:compiler:4.12.0")
     implementation ("androidx.camera:camera-core:1.2.2")

@@ -1,6 +1,7 @@
 package com.example.cropsdetection;
 
 import android.Manifest;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
@@ -16,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.cropsdetection.ml.Dataset5;
@@ -34,7 +36,7 @@ public class CaptureActivity extends AppCompatActivity {
     private static final float THRESHOLD_LOW = 10.0f;
 
     private ImageButton captureButton;
-    ImageButton camera, gallery, cropsbtn ,piesbtn;
+    ImageButton camera, gallery, cropsbtn ,piesbtn,mostdata;
     ImageView imageView, temperatureImageView;
     TextView result, temperatureTextView;
 
@@ -61,7 +63,29 @@ public class CaptureActivity extends AppCompatActivity {
         
         result.setVisibility(View.VISIBLE);
         piesbtn = findViewById(R.id.btn3);
+        mostdata = findViewById(R.id.btn4);
 
+        mostdata.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Build AlertDialog
+                AlertDialog.Builder builder = new AlertDialog.Builder(CaptureActivity.this);
+                builder.setTitle("Alert");
+                builder.setMessage("You need To Generate Piechart to see most data");
+                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Proceed to CaptureActivity
+                        Intent intent = new Intent(CaptureActivity.this, CaptureActivity.class);
+                        startActivity(intent);
+                    }
+                });
+
+                // Show AlertDialog
+                AlertDialog alertDialog = builder.create();
+                alertDialog.show();
+            }
+        });
         piesbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

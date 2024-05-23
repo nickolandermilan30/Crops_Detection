@@ -2,70 +2,137 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ListActivity">
+    tools:context=".ListActivity2">
 
-
-    <com.github.mikephil.charting.charts.PieChart
-        android:id="@+id/pieChart"
-        android:layout_width="345dp"
-        android:layout_height="297dp"
+    <ImageView
+        android:id="@+id/diseaseImageView"
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:layout_margin="16dp"
+        android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.531"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.036" />
+        app:layout_constraintVertical_bias="0.108" />
 
-    <Button
-        android:id="@+id/delete"
-        android:layout_width="143dp"
-        android:layout_height="49dp"
-        android:backgroundTint="#FF5722"
-        android:text="Delete"
-        app:layout_constraintBottom_toTopOf="@+id/oval"
-        app:layout_constraintEnd_toEndOf="@+id/listView"
-        app:layout_constraintHorizontal_bias="0.927"
+    <TextView
+        android:id="@+id/diseaseNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/bebas_neue"
+        android:text="Disease"
+        android:textColor="@android:color/black"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/diseaseImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.082"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/listView"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.615" />
 
-    <Button
-        android:id="@+id/gene"
-        android:layout_width="143dp"
-        android:layout_height="49dp"
-        android:backgroundTint="@color/light_green2"
-        android:text="Generate"
-        app:layout_constraintBottom_toTopOf="@+id/oval"
-        app:layout_constraintEnd_toStartOf="@+id/delete"
-        app:layout_constraintStart_toStartOf="@+id/listView"
-        app:layout_constraintTop_toBottomOf="@+id/listView"
-        app:layout_constraintVertical_bias="1.0" />
+    <TextView
+        android:id="@+id/percentageTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Number"
+        android:fontFamily="@font/bebas_neue"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.046"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/diseaseImageView" />
+
+    <!-- Add two more TextViews for additional information -->
+
+
+    <TextView
+        android:id="@+id/additionalInfo1TextView"
+        android:layout_width="254dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center|left"
+        android:text="add"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.745"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/percentageTextView" />
 
     <ImageButton
-        android:id="@+id/bar"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="6dp"
-        android:background="@drawable/border4_nav"
-        app:layout_constraintBottom_toTopOf="@+id/listView"
+        android:id="@+id/imageButton2"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/design2"
+        app:layout_constraintBottom_toBottomOf="@+id/additionalInfo2TextView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.909"
+        app:layout_constraintHorizontal_bias="0.07"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pieChart"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="@+id/additionalInfo2TextView"
+        app:layout_constraintVertical_bias="0.629" />
 
-    <ListView
-        android:id="@+id/listView"
-        android:layout_width="348dp"
-        android:layout_height="225dp"
+    <TextView
+        android:id="@+id/additionalInfo3TextView"
+        android:layout_width="252dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="84dp"
+        android:gravity="center|left"
+        android:text="add"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintHorizontal_bias="0.735"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.719" />
+        app:layout_constraintTop_toBottomOf="@+id/additionalInfo1TextView"
+        app:layout_constraintVertical_bias="0.023" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/design1"
+        app:layout_constraintBottom_toBottomOf="@+id/additionalInfo1TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.07"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/additionalInfo1TextView"
+        app:layout_constraintVertical_bias="0.666" />
+
+    <ImageButton
+        android:id="@+id/imageButton3"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/design3"
+        app:layout_constraintBottom_toBottomOf="@+id/additionalInfo3TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.07"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/additionalInfo3TextView"
+        app:layout_constraintVertical_bias="0.629" />
+
+    <TextView
+        android:id="@+id/additionalInfo2TextView"
+        android:layout_width="252dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center|left"
+        android:text="add"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/additionalInfo3TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.735"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/additionalInfo1TextView"
+        app:layout_constraintVertical_bias="0.333" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
@@ -148,7 +215,7 @@
         android:layout_marginEnd="19dp"
         android:background="@drawable/data"
         android:layout_marginBottom="10dp"
-        android:backgroundTint="@color/dark_green"
+        android:backgroundTint="@color/light_green2"
         android:elevation="10dp"
         app:layout_constraintBottom_toBottomOf="@+id/cardView"
         app:layout_constraintEnd_toStartOf="@+id/btn4"
@@ -160,7 +227,7 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:background="@drawable/bar"
-        android:backgroundTint="@color/light_green"
+        android:backgroundTint="@color/dark_green"
         android:elevation="10dp"
         android:layout_marginBottom="10dp"
         android:layout_marginStart="70dp"
@@ -205,7 +272,7 @@
         android:elevation="10dp"
         android:gravity="center"
         android:text="Pie Data"
-        android:textColor="@color/dark_green"
+        android:textColor="@color/light_green"
         android:textSize="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/btn3"
@@ -219,7 +286,7 @@
         android:elevation="10dp"
         android:gravity="center"
         android:text="Most data"
-        android:textColor="@color/light_green"
+        android:textColor="@color/dark_green"
         android:textSize="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/btn4"
